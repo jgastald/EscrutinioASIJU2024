@@ -28,13 +28,26 @@
     </script>
 </head>
 <body>
-    <div>
-        <input type="number" name="votosListaA" id="votosListaA">
-        <input type="number" name="votosListaB" id="votosListaB">
-    </div>
-    <button type="button" class="btn" id="calcular">Calcular</button>
+    <div class="container">
 
-    <div id="resultados">
+        <h1> Elecciones ASIJU </h1>
+
+        <form class="row g-3 needs-validation" >
+            <div>
+                
+                <label for="votosListaA" class="form-label">Cantidad de Votos para la Lista A </label>
+                <input type="number" name="votosListaA" id="votosListaA" class="form-control" placeholder="" default="1" min="1"   required>
+                <label for="votosListaB" class="form-label">Cantidad de Votos para la Lista B </label>
+                <input type="number" name="votosListaB" id="votosListaB" class="form-control" placeholder="" default="1" min="1"  required>
+            </div>
+            
+            <button type="button" class="btn" id="calcular">Calcular</button>
+
+        </form>
+
+        <div id="resultados">
+
+        </div>
 
     </div>
     
@@ -44,7 +57,7 @@
     document.getElementById('calcular').addEventListener('click', (e) => {
         // Do whatever you want
     //    e.target.textContent = 'Clicked!';
-
+ 
         let votosListaA = Number(document.getElementById("votosListaA").value);
         let votosListaB = Number(document.getElementById("votosListaB").value);
         let resultados  = document.getElementById("resultados");
@@ -55,7 +68,8 @@
         console.dir(cargos);
         
         resultados.innerHTML = 
-            "Cargos Lista A: " + cargos[0] ;
+            "Cargos Lista A: " + cargos[0] + "<br> " +
+            "Cargos Lista B: " + cargos[1] ;
         
 
     });
