@@ -37,10 +37,14 @@
         <form class="row g-3 needs-validation" >
             <div class="p-4">
                 
-                <label for="votosListaA" class="form-label">Cantidad de Votos para la Lista <b>A</b> </label>
-                <input type="number" name="votosListaA" id="votosListaA" class="form-control" placeholder="" default="1" min="1"   required>
-                <label for="votosListaB" class="form-label">Cantidad de Votos para la Lista <b>B</b> </label>
-                <input type="number" name="votosListaB" id="votosListaB" class="form-control" placeholder="" default="1" min="1"  required>
+                <label class="form-label">Ingrese las cantidades de votos escrutados para cada lista: </label>
+
+                <div>
+                    <label for="votosListaA" class="form-label"> Lista <b>A</b> </label>               
+                    <input type="number" name="votosListaA" id="votosListaA" class="form-control form-control-lg" placeholder="" default="1" min="1"   required>
+                    <label for="votosListaB" class="form-label">Lista <b>B</b> </label >
+                    <input type="number" name="votosListaB" id="votosListaB" class="form-control form-control-lg" placeholder="" default="1" min="1"  required>
+                </div>
             </div>
             
             <button type="button" class="btn btn-primary" id="calcular">Calcular</button>
