@@ -31,11 +31,11 @@
     <div class="container">
 
         <h1 class="display-1"> Elecciones ASIJU </h1>
-        <hr class="mb-6">
+        <hr class="mb-3">
 
 
         <form class="row g-3 needs-validation" >
-            <div>
+            <div class="p-4">
                 
                 <label for="votosListaA" class="form-label">Cantidad de Votos para la Lista <b>A</b> </label>
                 <input type="number" name="votosListaA" id="votosListaA" class="form-control" placeholder="" default="1" min="1"   required>
@@ -47,7 +47,7 @@
 
         </form>
 
-        <div id="resultados" class="m-4">
+        <div id="resultados" class="m-5">
             
         </div>
 
@@ -60,20 +60,36 @@
         // Do whatever you want
     //    e.target.textContent = 'Clicked!';
  
+
         let votosListaA = Number(document.getElementById("votosListaA").value);
         let votosListaB = Number(document.getElementById("votosListaB").value);
         let resultados  = document.getElementById("resultados");
 
-        let cargos = repartirCargosPorVotos(
-            votosListaA, votosListaB
-        );
-        console.dir(cargos);
-        
-        resultados.innerHTML = 
-            "<ul>" +
-              "<li> Cargos para lista <b>A</b>: " + cargos[0] + "</li> " +
-              "<li> Cargos para lista <b>B</b>: " + cargos[1] + "</li> " +
-            "</ul>";
+
+        if (votosListaA && votosListaB) {
+            let cargos = repartirCargosPorVotos(
+                votosListaA, votosListaB
+            );
+            console.dir(cargos);
+            
+            resultados.innerHTML = 
+                "<div class='card'>" +
+                    "<div class='card-header'>" +
+                    "  Distribucion de Cargos " +
+                    "</div>" +
+                    "<div class='card-body'>" +
+                        "<ul>" +
+                        "<li> <b>Lista A:</b> " + cargos[0] + " cargos </li> " +
+                        "<li> <b>Lista B:</b> " + cargos[1] + " cargos </li> " +
+                        "</ul>" +
+                    "</div>" +
+                "</div>" ;
+        } else {
+            resultados.innerHTML = 
+                '<div class="alert alert-warning" role="alert">' +
+                    "Las cantidades de votos son invalidas" +
+                '</div>'
+        }
         
 
     });
