@@ -30,23 +30,25 @@
 <body>
     <div class="container">
 
-        <h1> Elecciones ASIJU </h1>
+        <h1 class="display-1"> Elecciones ASIJU </h1>
+        <hr class="mb-6">
+
 
         <form class="row g-3 needs-validation" >
             <div>
                 
-                <label for="votosListaA" class="form-label">Cantidad de Votos para la Lista A </label>
+                <label for="votosListaA" class="form-label">Cantidad de Votos para la Lista <b>A</b> </label>
                 <input type="number" name="votosListaA" id="votosListaA" class="form-control" placeholder="" default="1" min="1"   required>
-                <label for="votosListaB" class="form-label">Cantidad de Votos para la Lista B </label>
+                <label for="votosListaB" class="form-label">Cantidad de Votos para la Lista <b>B</b> </label>
                 <input type="number" name="votosListaB" id="votosListaB" class="form-control" placeholder="" default="1" min="1"  required>
             </div>
             
-            <button type="button" class="btn" id="calcular">Calcular</button>
+            <button type="button" class="btn btn-primary" id="calcular">Calcular</button>
 
         </form>
 
-        <div id="resultados">
-
+        <div id="resultados" class="m-4">
+            
         </div>
 
     </div>
@@ -68,8 +70,10 @@
         console.dir(cargos);
         
         resultados.innerHTML = 
-            "Cargos Lista A: " + cargos[0] + "<br> " +
-            "Cargos Lista B: " + cargos[1] ;
+            "<ul>" +
+              "<li> Cargos para lista <b>A</b>: " + cargos[0] + "</li> " +
+              "<li> Cargos para lista <b>B</b>: " + cargos[1] + "</li> " +
+            "</ul>";
         
 
     });
