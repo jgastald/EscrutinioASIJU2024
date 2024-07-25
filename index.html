@@ -88,9 +88,10 @@
     document.getElementById('calcular').addEventListener('click', (e) => {
 
         // oculto mensajes y resultados
-        mensajes.style.display = 'none';
-        cardResultados.style.display = 'none';
-        resultados.innerHTML += '';
+        mensajes.style.display          = 'none';
+        cardResultados.style.display    = 'none';
+        resultados.innerHTML            = '';
+        mensajes.innerHTML              = '';
 
         let votosListaA = Number(document.getElementById("votosListaA").value);
         let votosListaB = Number(document.getElementById("votosListaB").value);
